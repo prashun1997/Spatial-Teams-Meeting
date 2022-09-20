@@ -244,7 +244,7 @@
             handleConferenceFlow();
             // Step 5: Create Invite link Here
             document.getElementById('btn-invite').onclick = () => {
-            let url = `http://127.0.0.1:8080/?token=${token}&alias=${alias}&name=guest`;
+            let url = `https://prashun1997.github.io/Spatial-Teams-Meeting/?token=${token}&alias=${alias}&name=guest`;
             navigator.clipboard.writeText(url);
             shareMessage(`Share the URL copied to your browser clipboard: ${url}`);
             }

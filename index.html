@@ -130,12 +130,12 @@
             if (!VoxeetSDK.session.isOpen()) { await openSession(participantName); };
             const conferenceOptions = {
                 alias: conferenceAlias,
-                params: {
-                    spatialAudioStyle: "individual"
-                }
+//                 params: {
+//                     spatialAudioStyle: "individual"
+//                 }
             }
              const joinOptions = {
-                spatialAudio:  true,
+//                 spatialAudio:  true,
                 constraints: { audio: true, video: true }
             };
   
@@ -143,7 +143,7 @@
             const conference = await VoxeetSDK.conference.create(conferenceOptions);
             await VoxeetSDK.conference.join(conference, joinOptions);
             shareMessage(`Step 3: Conference '${conferenceAlias}' created and joined.`);
-            VoxeetSDK.conference.setSpatialEnvironment(scale, forward, up, right);
+//             VoxeetSDK.conference.setSpatialEnvironment(scale, forward, up, right);
                 } catch (error) {
                 console.log(error);
                 }
@@ -228,16 +228,16 @@
 
             document.getElementById('btn-join').onclick = async () => {
                 await createAndJoinConference(alias, name);
-                [...VoxeetSDK.conference.participants.values()].map(participant => {
-                    if(participant.info.name === "guest")
-                    {
-                VoxeetSDK.conference.setSpatialPosition(participant, spatialPosition)
-                    }
-                    else
-                    {
-                        VoxeetSDK.conference.setSpatialPosition(participant, spatialPosition2) 
-                    }
-            })
+//                 [...VoxeetSDK.conference.participants.values()].map(participant => {
+//                     if(participant.info.name === "guest")
+//                     {
+//                 VoxeetSDK.conference.setSpatialPosition(participant, spatialPosition)
+//                     }
+//                     else
+//                     {
+//                         VoxeetSDK.conference.setSpatialPosition(participant, spatialPosition2) 
+//                     }
+//             })
             };
 
             // Step 4: Call handleConferenceFlow() Here
